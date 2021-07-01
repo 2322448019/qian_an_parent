@@ -1,0 +1,23 @@
+server:
+  port: 9002
+spring:
+  rabbitmq:
+    host: 192.168.11.129
+  application:
+    name: qian-an-upload
+  servlet:
+    multipart:
+      max-file-size: 10MB # 限制文件上传大小
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true # 可以将IP注册到Eureka Server上，而如果不配置就是机器的主机名
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+fdfs:
+  so-timeout: 1501 #超时时间
+  connect-timeout: 601 #连接超时时间
+  tracker-list: # tracker地址
+    - 192.168.11.129:22122

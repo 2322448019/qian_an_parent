@@ -1,0 +1,17 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: qian-an-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/noriFish/qian-an-config.git
+#  rabbitmq:
+#    host: 192.168.11.129
+#management:   # 暴露触发消息总线的地址
+#  endpoint:
+#    web:
+#      exposure:
+#        include: bus-refresh
